@@ -1,0 +1,42 @@
+/* Login */
+.LoginForm {
+    position: fixed;
+    top: 25%;
+    text-align: center;
+    width: 25%;
+    left: 37.5%; /* 25 + 25/2 */
+    background-color:azure;
+    opacity: 90%;
+    padding-bottom: 2vw;
+    border-radius: 2%;
+}
+
+.LoginForm > * {
+    margin: 1vh 1vw;
+}
+.LoginForm * {
+    padding: 0.5vh 0.5vw;
+    color: black;
+}
+
+.LoginForm label {
+    float: left;
+}
+
+.LoginForm input {
+    float: right;
+}
+
+.LoginForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitBtn {
+    width: 10em;
+    margin: auto;
+}
+
+input {
+    font-size: 0.9em;
+}

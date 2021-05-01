@@ -1,0 +1,58 @@
+/* Table */
+.ag-theme-balham {
+    margin: auto;
+    max-width: 75vw;
+}
+.ag-theme-balham * {
+    color: black;
+    border-radius: 8px;
+}
+/* Border radius fix */
+.ag-header-cell-label * {
+    border-radius: 0;
+}
+
+/* Header fixes */
+.ag-header-row-floating-filter *::after {
+    content: none !important;
+}
+.ag-header-viewport *:last-child:after {
+    content: none;
+}
+.ag-header-row-floating-filter * {
+    border: 0 !important;
+}
+
+/* Coloring */
+.ag-theme-balham .ag-row-odd {
+    background-color: #eee;
+}
+.ag-theme-balham .ag-row-hover {
+    background-color: #d7d7df;
+}
+.ag-theme-balham .ag-header-viewport, .ag-theme-balham .ag-paging-panel { /* Header */
+    background-color: #3b4550;
+}
+div.ag-header-row.ag-header-row-column *, .ag-paging-panel *, .ag-floating-filter-button * {
+    color: white;
+}
+
+.customFilters span {
+    color: white;
+}
+
+.customFilters input {
+    float: right;
+    padding: 0.5em 1em;
+    margin-left: 1vw;
+    font-size: 1.1em;
+}
+  
+.customFilters div {
+    float: left;
+}
+  
+.customFilters select {
+    margin-left: 1vw;
+    padding: 0.5em 1em;
+}

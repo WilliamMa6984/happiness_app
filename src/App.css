@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* Stretch to fit */
+html, body, #root, .App {
+  height: 100%;
+}
+
+/* Nav bar */
+.NavBar {
+  position: sticky;
+  z-index: 2;
+  top: 0%;
+  width: 100%;
+  text-align: left;
+  background-color: #26373D;
+}
+.NavBar ul {
+  width: 100%;
+}
+
+.NavBar ul li {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.5vh 0.5vw;
+}
+
+.NavBar ul li * {
+  text-decoration: none;
+  padding: 1.5vh 0.8vw;
+  color: lightgrey;
+}
+
+.navTab:hover {
+  border-bottom: 1px solid tomato;
+}
+
+#signOutButton {
+  color: black;
+  border: transparent;
+  border-radius: 5vw;
+}
+
+#signOutButton:hover {
+  background-color: #dedede;
+}
+
+.navLinkSelected {
+  border-bottom: 1px solid tomato;
+}
+
+#navSeparator {
+  height: 1em;
+  padding: 1vh 0;
+  border-left: 1px solid white;
+}
+
+/* Content */
+.App {
+  min-height: 100%;
+  height: auto;
+}
+.bg {
+  position: fixed;
+  z-index: -1;
+  top: 0%;
+  background-color: cornflowerblue;
+  background-image: url("./Images/home_bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  margin-top: 1vh;
+  padding: 1vh 1vw;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+input:hover {
+  background-color: #ccc;
+}
+
+p {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+#attribution {
+  background-color: black;
+  padding: 1vh 1vw;
+  width: 8vw;
+  text-align: right;
+  position: fixed;
+  bottom: 0%;
+  right: 0%;
+  opacity: 75%;
+}
+#attribution * {
+    color: white;
+}
