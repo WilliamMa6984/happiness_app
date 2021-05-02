@@ -207,11 +207,30 @@ export default function Factors() {
 
     const economyData = factorData('economy', 'rgba(99, 255, 112, 0.2)', 'rgba(99, 255, 112, 1)');
     const familyData = factorData('family', 'rgba(152, 61, 255, 0.2)', 'rgba(152, 61, 255, 1)');
-    
     const healthData = factorData('health', 'rgba(255, 43, 43, 0.2)', 'rgba(255, 43, 43, 1)');
     const freedomData = factorData('freedom', 'rgba(61, 81, 255, 0.2)', 'rgba(61, 81, 255, 1)');
     const generosityData = factorData('generosity', 'rgba(255, 98, 255, 0.2)', 'rgba(255, 98, 255, 1)');
     const trustData = factorData('trust', 'rgba(61, 242, 255, 0.2)', 'rgba(61, 242, 255, 1)');
+
+    // Label axes for factors
+    function factorsOptions(yLabel) {
+      return {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Year'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: yLabel
+            }
+          }
+        }
+      }
+    }
     
     // Load factors button event
     function handleLoad() { setLoadFactors(factors); }
@@ -245,6 +264,24 @@ export default function Factors() {
                     <Line
                       className="Graph"
                       data={rankingData}
+                      options={
+                        {
+                          scales: {
+                            x: {
+                              title: {
+                                display: true,
+                                text: 'Year'
+                              }
+                            },
+                            y: {
+                              title: {
+                                display: true,
+                                text: 'Happiness'
+                              }
+                            }
+                          }
+                        }
+                      }
                     />
                     <br/>
                   </div>
@@ -276,36 +313,42 @@ export default function Factors() {
                 <Line
                   className="Graph"
                   data={economyData}
+                  options={factorsOptions('Economy')}
                 />
                 <br/>
                 <br/>
                 <Line
                   className="Graph"
                   data={familyData}
+                  options={factorsOptions('Family')}
                 />
                 <br/>
                 <br/>
                 <Line
                   className="Graph"
                   data={healthData}
+                  options={factorsOptions('Health')}
                 />
                 <br/>
                 <br/>
                 <Line
                   className="Graph"
                   data={freedomData}
+                  options={factorsOptions('Freedom')}
                 />
                 <br/>
                 <br/>
                 <Line
                   className="Graph"
                   data={generosityData}
+                  options={factorsOptions('Generosity')}
                 />
                 <br/>
                 <br/>
                 <Line
                   className="Graph"
                   data={trustData}
+                  options={factorsOptions('Trust')}
                 />
                 <br/>
               </div>
