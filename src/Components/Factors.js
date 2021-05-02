@@ -253,12 +253,12 @@ export default function Factors() {
               <br/>
               <div className="ag-theme-balham" style={{
                 height: "345px",
-                width: "850px"
+                width: "1000px"
               }}>
                 <AgGridReact className="Factor"
                   columnDefs={columnDefs}
                   defaultColDef={{
-                    width: '100px'
+                    width: '125px'
                   }}
                   rowData={factors.concat(selectFactors)}
                   onGridReady={setupParams}
