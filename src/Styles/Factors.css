@@ -1,0 +1,14 @@
+.factorsContent .graphContainer {
+    display: flex;
+    width: 50%;
+}
+
+.factorsContent .graphContainer > * {
+    margin: 1vh 1vw;
+}
+
+.factorsContent .ag-center-cols-container > *:last-child {
+    border-top: 1px solid #888;
+    border-radius: 0;
+    background-color: #853e3ebd;
+}
