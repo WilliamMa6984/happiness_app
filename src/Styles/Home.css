@@ -1,17 +1,17 @@
 /* Search bar */
-#searchReset, #goBtn {
+.homeContent #searchReset, .homeContent #goBtn {
     padding: 0.5% 0;
     width: 5%;
     font-size: 1.2em;
     border: transparent;
     background-color: transparent;
 }
-#searchReset:hover, #goBtn:hover {
+.homeContent #searchReset:hover, .homeContent #goBtn:hover {
     cursor: pointer;
     font-weight: bold;
 }
 
-#searchInput {
+.homeContent #searchInput {
     text-align: center;
     padding: 0.5% 0;
     margin-top: 0.5%;
@@ -23,7 +23,7 @@
     background-color: transparent;
 }
 
-#searchBar {
+.homeContent #searchBar {
     display: flex;
     padding: 0%;
     width: fit-content;
@@ -33,10 +33,10 @@
     margin: auto;
     opacity: 80%;
 }
-#searchBar * {
+.homeContent #searchBar * {
     color: white;
 }
-#widthFix {
+.homeContent #widthFix {
     width: 1em;
     opacity: 0%;
 }
@@ -46,28 +46,28 @@
     color: black;
 }
 
-#centre {
+.homeContent #centre {
     position: absolute;
     top: 48%;
     left: 20%;
     right: 20%;
 }
-#centre > p {
+.homeContent #centre > p {
     text-align: center;
     font-size: 1.2em;
     color: black;
 }
 
-#intro {
+.homeContent #intro {
     position: absolute;
     top: 20%;
     left: 15%;
     right: 15%;
 }
-#intro h1 {
+.homeContent #intro h1 {
     width: 65%;
 }
-#intro p {
+.homeContent #intro p {
     float: right;
     width: 75%;
     text-align: right;

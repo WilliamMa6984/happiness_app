@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import { useLocation } from "react-router";
-import { linkParams } from "../App";
 
 // Sign out button function
 function signOut() {
@@ -9,15 +8,16 @@ function signOut() {
 }
 export default function NavBar() {
   // URL Query
-  const params = new URLSearchParams(useLocation().search);
+  const searchParams = new URLSearchParams(useLocation().search).toString();
+  const params = searchParams === null ? "" : "?" + searchParams;
 
   return (
     <div className="NavBar">
         <ul>
-          <li><NavLink to={`/${linkParams(params)}`}><img src="/logo192.png" width="30px" alt="Home Logo by Timothy Miller"/></NavLink></li>
-          <li><NavLink to={`/Country${linkParams(params)}`} activeClassName="navLinkSelected" className="navTab">Country</NavLink></li>
-          <li><NavLink to={`/Rankings${linkParams(params)}`} activeClassName="navLinkSelected" className="navTab">Rankings</NavLink></li>
-          <li><NavLink to={`/Factors${linkParams(params)}`} activeClassName="navLinkSelected" className="navTab">Factors</NavLink></li>
+          <li><NavLink to={`/${params}`}><img src="/logo192.png" width="30px" alt="Home Logo by Timothy Miller"/></NavLink></li>
+          <li><NavLink to={`/Country${params}`} activeClassName="navLinkSelected" className="navTab">Country</NavLink></li>
+          <li><NavLink to={`/Rankings${params}`} activeClassName="navLinkSelected" className="navTab">Rankings</NavLink></li>
+          <li><NavLink to={`/Factors${params}`} activeClassName="navLinkSelected" className="navTab">Factors</NavLink></li>
           <li id="navSeparator" />
           { // Check if not logged in
           localStorage.getItem("token") === "" ?

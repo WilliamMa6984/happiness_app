@@ -12,10 +12,6 @@ import Login from './Components/Login';
 
 export const API_URL = "http://131.181.190.87:3000";
 
-export function linkParams(params) {
-  return params.get("country") === null ? "" : "?country=" + params.get("country");
-}
-
 function App() {
 
   // Add URL params to NavLinks

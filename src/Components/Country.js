@@ -132,10 +132,12 @@ function getFactors(countryName, year) {
 export default function Factors() {
     // Hooks
     // URL Query
-    const param = new URLSearchParams(useLocation().search).get("country");
+    const param = new URLSearchParams(useLocation().search);
+    const country = param.get("country");
+    const paramStr = param === null ? "" : "?" + param;
 
     // Get rankings from API
-    const { loading, rankings, error, loadingFactors, factors, errorFactors } = UseRankingsFactorsAPI(param);
+    const { loading, rankings, error, loadingFactors, factors, errorFactors } = UseRankingsFactorsAPI(country);
     const [ loadFactors, setLoadFactors ] = useState([]);
     
     // Set column headings
@@ -147,15 +149,15 @@ export default function Factors() {
     const columnDefsFactors = [
       {headername: "Year", field: "year", sortable: true},
       {headername: "Economy", field: "economy", sortable: true},
-      {headername: "family", field: "family", sortable: true},
-      {headername: "health", field: "health", sortable: true},
-      {headername: "freedom", field: "freedom", sortable: true},
-      {headername: "generosity", field: "generosity", sortable: true},
-      {headername: "trust", field: "trust", sortable: true}
+      {headername: "Family", field: "family", sortable: true},
+      {headername: "Health", field: "health", sortable: true},
+      {headername: "Freedom", field: "freedom", sortable: true},
+      {headername: "Generosity", field: "generosity", sortable: true},
+      {headername: "Trust", field: "trust", sortable: true}
     ]
 
     // Default heading 1
-    let heading1 = param ? `Searching for ${param}...` : `Invalid country`;
+    let heading1 = country ? `Searching for ${country}...` : `Invalid country`;
     // Got a country -> set heading 1 string
     if (rankings.length !== 0) {
       heading1 = rankings[0].country;
@@ -238,6 +240,7 @@ export default function Factors() {
     return (
       <div className="content countryContent">
       <h1>{heading1}</h1>
+      <p>Compare the country's scores over the years</p>
       {// Check error
           error ?
             <div>
@@ -248,13 +251,16 @@ export default function Factors() {
               // Check loading
               loading ? <p>Please wait while we get the rankings...</p> : (
                   <div>
-                    <h2><Link to={`/Rankings?country=${param}`}>Go to Rankings</Link></h2>
+                    <h2><Link to={`/Rankings${paramStr}`}>Go to Rankings</Link></h2>
                     <div className="ag-theme-balham" style={{
                         height: "235px",
                         width: "610px"
                     }}>
                         <AgGridReact className="Rank"
                         columnDefs={columnDefs}
+                        defaultColDef={{
+                          sortable: true
+                        }}
                         rowData={rankings}
                         pagination={true}
                         paginationPageSize={6}
@@ -297,13 +303,16 @@ export default function Factors() {
           // Check loading
           loadingFactors ? <p>Please wait while we get the factors...</p> : (
             <div>
-              <h2><Link to={`/Factors?country=${param}`}>Go to Factors</Link><input type="button" onClick={handleLoad} value="Load" /></h2>
+              <h2><Link to={`/Factors${paramStr}`}>Go to Factors</Link><input type="button" onClick={handleLoad} value="Load Factors" /></h2>
               <div className="ag-theme-balham" style={{
                 height: "252px",
                 width: "610px"
                 }}>
                 <AgGridReact className="Factor"
                 columnDefs={columnDefsFactors}
+                defaultColDef={{
+                  width: '86px', sortable: true
+                }}
                 rowData={loadFactors}
                 pagination={true}
                 paginationPageSize={6}

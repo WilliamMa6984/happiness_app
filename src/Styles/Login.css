@@ -32,11 +32,11 @@
     flex-direction: column;
 }
 
-.submitBtn {
+.LoginForm .submitBtn {
     width: 10em;
     margin: auto;
 }
 
-input {
+.LoginForm input {
     font-size: 0.9em;
 }

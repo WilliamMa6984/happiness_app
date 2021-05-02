@@ -75,7 +75,7 @@ function getUniqueYears(rankingsIn, yearsOut) {
 }
 
 // React components
-function CustomFilters(props) {
+export function CustomFilters(props) {
   return (
     <div className="customFilters">
       <div>
